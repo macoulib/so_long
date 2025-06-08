@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 13:46:35 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/08 12:46:41 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/08 14:41:56 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,15 @@ int main(void)
 	if (!data.win_ptr)
 		return (free(data.mlx_ptr), 1);
 
-	// Register key release hook
-	mlx_hook(data.win_ptr, KeyRelease, KeyReleaseMask, &on_keypress, &data);
 
-	// Register destroy hook
-	mlx_hook(data.win_ptr, DestroyNotify, StructureNotifyMask, &on_destroy, &data);
+    // Initialisation des images
+    reset_img(&data);
 
-	// Loop over the MLX pointer
-	mlx_loop(data.mlx_ptr);
+    // Affichage des images (par exemple, afficher le mur à la position 100, 100)
+    mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.img_wall, 100, 100);
+    // Tu peux afficher d'autres images de la même manière à différentes positions
+
+    // Boucle principale
+    mlx_loop(data.mlx_ptr);
 	return (0);
 }

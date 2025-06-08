@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "*.gitignore": "c"
+        "*.gitignore": "c",
+        "keysym.h": "c"
     }
 }
