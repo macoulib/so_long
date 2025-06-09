@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/08 14:49:22 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/09 23:34:02 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,26 @@
 #include <stdlib.h>
 #include <X11/X.h>
 #include <X11/keysym.h>
+#include <fcntl.h>  // pour O_RDONLY
+#include <string.h>  // pour O_RDONLY
+#include <unistd.h>    // pour read(), close()
+#include <stdlib.h>    // pour malloc(), free()
 
 
 
+#define BUFFER_SIZE 1024
+
+typedef struct cnt_s
+{
+	char	exit;
+	char	collect;
+	char	player;
+	char	wall;
+	char	space;
+	int		count_p;
+	int		count_e;
+	int		count_c;
+}				t_cnt;
 
 typedef struct img_s
 {
@@ -44,9 +61,16 @@ typedef struct s_data
 	void *mlx_ptr;
 	void *win_ptr;
     t_img img;
+	char	**map;
+	t_cnt	cnt;
+	
 
 } t_data;
 
 void	reset_img(t_data *data);
+char	*get_file_content(const char *filename);
+char	**load_map(const char *filename);
+char	**ft_split(const char *s, char c);
+void	draw_map(t_data *data);
 
 #endif

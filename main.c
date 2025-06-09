@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 13:46:35 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/08 14:41:56 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/09 23:36:44 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,19 @@ int main(void)
     // Initialisation des images
     reset_img(&data);
 
-    // Affichage des images (par exemple, afficher le mur à la position 100, 100)
-    mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.img_wall, 100, 100);
-    // Tu peux afficher d'autres images de la même manière à différentes positions
+   data.map = load_map("map.ber");
+   if (!data.map)
+{
+    write(2, "Erreur: map non chargée\n", 25);
+    return (1);
+}
 
+// Debug : Afficher la map dans le terminal
+for (int i = 0; data.map[i]; i++)
+    printf("%s\n", data.map[i]);
+
+   draw_map(&data);
+	
     // Boucle principale
     mlx_loop(data.mlx_ptr);
 	return (0);
