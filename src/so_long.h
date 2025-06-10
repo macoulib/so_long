@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/09 23:34:02 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:49:53 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "minilibx-linux/mlx.h"
+#include "../minilibx-linux/mlx.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <X11/X.h>
@@ -23,8 +23,6 @@
 #include <string.h>  // pour O_RDONLY
 #include <unistd.h>    // pour read(), close()
 #include <stdlib.h>    // pour malloc(), free()
-
-
 
 #define BUFFER_SIZE 1024
 
@@ -63,14 +61,18 @@ typedef struct s_data
     t_img img;
 	char	**map;
 	t_cnt	cnt;
-	
 
 } t_data;
 
 void	reset_img(t_data *data);
 char	*get_file_content(const char *filename);
-char	**load_map(const char *filename);
 char	**ft_split(const char *s, char c);
-void	draw_map(t_data *data);
+char	*get_next_line(int fd);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *theString );
+char	**ft_split(const char *s, char c);
+char	*get_next_line(int fd);
+int parsing(char *file);
 
 #endif

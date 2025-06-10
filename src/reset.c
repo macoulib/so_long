@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 14:33:07 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/09 23:11:10 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/09 23:43:21 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,50 +45,4 @@ void	reset_img(t_data *data)
 			data->img.collect, &(data->img.width), &(data->img.height));
 	data->img.img_player = mlx_xpm_file_to_image(data->mlx_ptr,
 			data->img.player, &(data->img.width), &(data->img.height));
-}
-
-void	draw_map(t_data *data)
-{
-	int	x;
-	int	y;
-	char	tile;
-
-	y = 0;
-	while (data->map[y])
-	{
-		x = 0;
-		while (data->map[y][x])
-		{
-			tile = data->map[y][x];
-			if (tile == data->cnt.wall)
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_wall, x * data->img.width, y * data->img.height);
-			else if (tile == data->cnt.space)
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_floor, x * data->img.width, y * data->img.height);
-			else if (tile == data->cnt.player)
-			{
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_floor, x * data->img.width, y * data->img.height);
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_player, x * data->img.width, y * data->img.height);
-			}
-			else if (tile == data->cnt.collect)
-			{
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_floor, x * data->img.width, y * data->img.height);
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_collect, x * data->img.width, y * data->img.height);
-			}
-			else if (tile == data->cnt.exit)
-			{
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_floor, x * data->img.width, y * data->img.height);
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-					data->img.img_exit, x * data->img.width, y * data->img.height);
-			}
-			x++;
-		}
-		y++;
-	}
 }
