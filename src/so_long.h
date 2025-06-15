@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/10 17:49:53 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/15 11:07:51 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *theString );
 char	**ft_split(const char *s, char c);
 char	*get_next_line(int fd);
-int parsing(char *file);
+int		parsing(char *file);
+int on_destroy(t_data *data);
+int on_keypress(int keysym, t_data *data);
 
 #endif

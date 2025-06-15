@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 13:46:35 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/10 17:40:35 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/15 11:28:14 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(void)
 	data.mlx_ptr = mlx_init();
 	if (!data.mlx_ptr)
 		return (1);
-	data.win_ptr = mlx_new_window(data.mlx_ptr, 80 , 80 , "macoulib :)");
+	data.win_ptr = mlx_new_window(data.mlx_ptr, 400 , 600 , "macoulib :)");
 	if (!data.win_ptr)
 		return (free(data.mlx_ptr), 1);
 
@@ -43,7 +43,9 @@ int main(void)
     reset_img(&data);
 	//parsing(av[1]);
     mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.img_wall, 100, 100);
-	
+	//
+	char *pass = "../map/mapcorrect.ber";
+	parsing(pass);
     // Boucle principale
     mlx_loop(data.mlx_ptr);
 	return (0);

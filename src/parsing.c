@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:12:57 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/10 17:49:34 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/15 11:30:08 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int parsing(char *file)
         return (1);
     }
     // Lire et faire toutes les verifications
-    
+    printf("xx");
     return (0);
 }
