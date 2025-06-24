@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/23 18:49:18 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/24 20:07:14 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@
 # ifndef BUFFEressources
 #  define BUFFER_SIZE 1024
 # endif
+
+# define IMGHEIGHT			32
+# define IMGWIDTH			32
 
 typedef struct position_s
 {
@@ -61,11 +64,8 @@ typedef struct s_data
 	int		width;
 	int		height;
 	char	**map;
-    t_img	img_floor;
-	t_img	img_player;
-	t_img	img_exit;
-	t_img	img_wall;
-	t_img	img_collect;
+    t_img	img;
+
 	t_cnt	cnt;
 }  t_data;
 
@@ -77,10 +77,13 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *src);
 char	**ft_split(const char *s, char c);
 char	*ft_strchr(const char *s, int c);
-void init_cnt(t_data *data);
+void ft_inicnt(t_data *data);
 char	*get_next_line(int fd);
 void get_map(t_data *data , char *av);
 void map_valid(t_data *data);
 int taille_tableau(char **tab);
+void ft_inicnt(t_data *data);
+void img_forposition(t_data *data, int i , int j);
+void render_data(t_data *data);
 
 #endif

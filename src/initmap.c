@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/23 18:51:57 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/24 14:26:25 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void checkcommandeline(int ac , char *av[])
         ft_error("erreur argument nombreux");
     if (ac < 2)
         ft_error("erreur manque d' argument");
-    
     avleng = ft_strlen(av[1]);
     if (avleng < 4) 
         ft_error("erreur d'extension");
