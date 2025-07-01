@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/24 20:07:14 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/06/30 21:48:32 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 
 # define IMGHEIGHT			32
 # define IMGWIDTH			32
+#define ESC_KEY 53 
 
 typedef struct position_s
 {
@@ -40,12 +41,15 @@ typedef struct position_s
 
 
 
-typedef struct img_s
+typedef struct s_img
 {
-	void	*xpm_ptr;
-	int		x;
-	int		y;
-} t_img;
+	
+	void	*collectible;
+	void	*wall;
+	void	*exit;
+	void	*player;
+	void	*floor;
+}t_img;
 
 
 typedef struct cnt_s
@@ -65,8 +69,8 @@ typedef struct s_data
 	int		height;
 	char	**map;
     t_img	img;
-
 	t_cnt	cnt;
+	t_positon	position;
 }  t_data;
 
 void ft_error(const char *message);
@@ -85,5 +89,12 @@ int taille_tableau(char **tab);
 void ft_inicnt(t_data *data);
 void img_forposition(t_data *data, int i , int j);
 void render_data(t_data *data);
+int	fkclose(t_data *data);
+int	ftclose(t_data *data);
+int	key_hook(int keycode, t_data *data);
+void rightmv(t_data *data);
+void leftmv(t_data *data);
+void upmv(t_data *data);
+void downmv(t_data *data);
 
 #endif
