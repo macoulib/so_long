@@ -1,5 +1,5 @@
 NAME = so_long
-CC = cc
+CC = cc -g3
 SRCS_DIR = ./librairie
 UTILS_DIR = ./src
 
@@ -17,13 +17,13 @@ SRCS = $(addprefix $(UTILS_DIR)/, $(UTILS)) \
 # Fichiers objets
 OBJS = $(SRCS:.c=.o)
 
-STANDARD_FLAGS = -Wall -Werror -Wextra
+STANDARD_FLAGS = -g3
 LDFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(STANDARD_FLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
+	$(CC) $(STANDARD_FLAGS) $(OBJS) -o $(NAME) $(LDFLAGS) 
 
 clean:
 	rm -f $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/30 20:02:29 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/01 21:39:12 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,15 @@ int main(int ac , char *av[])
     map_valid(data);
     ft_inicnt(data);
     data->mlx_ptr = mlx_init();
+    if (!data->mlx_ptr)
+        ft_error("mlx_init failed");
     data->win_ptr = mlx_new_window( data->mlx_ptr,ft_strlen(data->map[0]) * 80, taille_tableau(data->map) * 80,"macoulib :) ");
-    if (!data->win_ptr)
-    {   
-        free(data->win_ptr);
-        ft_error("error");   
-    }
+   if (!data->win_ptr)
+    ft_error("error");
+    init_images(data);
     render_data(data);
     mlx_hook(data->win_ptr, 17, 0, close_window, NULL); 
     mlx_key_hook(data->win_ptr, key_hook, data);  
     mlx_loop(data->mlx_ptr);
-   
-
     return (0);
 }
