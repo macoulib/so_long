@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 20:13:06 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/24 16:33:55 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:51:00 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void check_content(t_data *data)
         j = 0;
         while (data->map[i][j])
         {
-             if(!ft_strchr("PE0C1",data->map[i][j]))
+             if(!ft_strchr("PE0C1T",data->map[i][j]))
                 ft_error("Lettre parasite retrouver.\n");
              if (data->map[i][j] == '0')
                 o ++;
@@ -102,7 +102,6 @@ void check_wall(t_data *data)
                 ft_error("erreur de mur principal");
             j++;
         }
-        
         if (data->map[i][0] != '1' || data->map[i][linelen - 1] != '1')
                 ft_error("erreur de mur ouverte");
         i++;

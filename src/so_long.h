@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/02 12:58:25 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/02 17:48:16 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_img
 	void		*exit;
 	void		*player;
 	void		*floor;
+	void		*enemy;
 }				t_img;
 
 typedef struct cnt_s
@@ -83,7 +84,6 @@ void			get_map(t_data *data, char *av);
 void			map_valid(t_data *data);
 int				taille_tableau(char **tab);
 void			ft_inicnt(t_data *data);
-void			img_forposition(t_data *data, int i, int j);
 void			render_data(t_data *data);
 int				fkclose(t_data *data);
 int				key_hook(int keycode, t_data *data);
