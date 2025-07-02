@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/01 22:43:36 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:58:25 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct cnt_s
 	int			exit;
 	int			player;
 	int			collected;
+	int			tot_collect;
 }				t_cnt;
 
 typedef struct s_data
@@ -85,7 +86,6 @@ void			ft_inicnt(t_data *data);
 void			img_forposition(t_data *data, int i, int j);
 void			render_data(t_data *data);
 int				fkclose(t_data *data);
-int				ftclose(t_data *data);
 int				key_hook(int keycode, t_data *data);
 void			rightmv(t_data *data);
 void			leftmv(t_data *data);
@@ -95,4 +95,5 @@ void			init_images(t_data *data);
 void			rendermap(t_data *data);
 void			init_images(t_data *data);
 void			displayimg(t_data *data, int y, int x);
+
 #endif
