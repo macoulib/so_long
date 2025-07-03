@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 22:21:00 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 22:25:16 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ void	init_images(t_data *data)
 	data->img.enemy = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/perso_texture.xpm", &width, &height);
 	data->img.player1 = mlx_xpm_file_to_image(data->mlx_ptr,
-			"./ressources/xpm/mario_player1.xpm.xpm", &width, &height);
-	data->player_img = data->img.player;
+			"./ressources/xpm/mario_player1.xpm", &width, &height);
 }
 
 void	rendermap(t_data *data)
@@ -40,6 +39,7 @@ void	rendermap(t_data *data)
 	char	*msg;
 
 	y = 0;
+
 	while (data->map[y])
 	{
 		x = -1;
@@ -90,6 +90,7 @@ void	render_data(t_data *data)
 	int j;
 
 	i = 0;
+	data->player_img = data->img.player;
 	while (taille_tableau(data->map) > i)
 	{
 		data->player_img = data->img.player;
