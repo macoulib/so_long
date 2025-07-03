@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:32:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/02 12:57:03 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:02:32 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_inicnt(t_data *data)
 	y = 0;
 	free((data->cnt.coins = 0, data->cnt.exit = 0, data->cnt.player = 0,
 			data->position.x = 0, data->position.y = 0, NULL));
-	data->cnt.collected = 0;
+	data->cnt.mvt = 0;
 	data->cnt.tot_collect = 0;
 	count_collectibles(data);
 	while (data->map[y])

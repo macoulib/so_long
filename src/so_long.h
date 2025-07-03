@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 15:09:47 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:01:38 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,11 @@ typedef struct s_img
 
 typedef struct cnt_s
 {
-	int			rows;
-	int			columns;
+	
 	int			coins;
 	int			exit;
 	int			player;
-	int			collected;
+	int			mvt;
 	int			tot_collect;
 }				t_cnt;
 
