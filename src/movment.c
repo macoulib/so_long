@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:03:42 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 18:06:10 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:21:14 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	rightmv(t_data *data)
 		
 	}
 	if (data->map[y][x + 1] == 'E' && data->cnt.tot_collect > 0)
-	{
+	{int enemy_dir;
+
 		write(2, "You need to collect all collectibles to exit !", 47);
 		return ;
 	}

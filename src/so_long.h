@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 17:01:38 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:25:26 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ typedef struct position_s
 	int			y;
 }				t_positon;
 
+typedef struct eposition_s
+{
+	int			x;
+	int			y;
+}	t_epositon;
+
 typedef struct s_img
 {
 	void		*collectible;
@@ -64,9 +70,12 @@ typedef struct s_data
 	int			width;
 	int			height;
 	char		**map;
+	int enemy_dir;
 	t_img		img;
 	t_cnt		cnt;
 	t_positon	position;
+	t_epositon	eposition;
+	
 }				t_data;
 
 void			ft_error(const char *message);

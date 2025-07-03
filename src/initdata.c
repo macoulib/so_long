@@ -6,11 +6,12 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:32:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 17:02:32 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:23:38 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 
 void	count_collectibles(t_data *data)
 {
@@ -43,7 +44,8 @@ void	ft_inicnt(t_data *data)
 	free((data->cnt.coins = 0, data->cnt.exit = 0, data->cnt.player = 0,
 			data->position.x = 0, data->position.y = 0, NULL));
 	data->cnt.mvt = 0;
-	data->cnt.tot_collect = 0;
+	data->cnt.tot_collect = 0;int enemy_dir;
+
 	count_collectibles(data);
 	while (data->map[y])
 	{

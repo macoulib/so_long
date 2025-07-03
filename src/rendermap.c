@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 17:32:44 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:52:39 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ void	init_images(t_data *data)
 	data->img.exit = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/exit_texture.xpm", &width, &height);
 	data->img.collectible = mlx_xpm_file_to_image(data->mlx_ptr,
-			"./ressources/xpm/collectible_texture.xpm", &width, &height);
+			"./ressources/xpm/collect.xpm", &width, &height);
 	data->img.player = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/mario_player.xpm", &width, &height);
 	data->img.enemy = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/perso_texture.xpm", &width, &height);
-	
 }
 
 void	rendermap(t_data *data)

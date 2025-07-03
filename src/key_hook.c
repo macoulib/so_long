@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:38:41 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 17:05:54 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:25:10 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@ int	fkclose(t_data *data)
 	return (0);
 }
 
+
+
 int	key_hook(int keycode, t_data *data)
 {
 	int i = 0;
+
+	
 	if (keycode == 65307)
 	{
 		fkclose(data);
@@ -29,7 +33,8 @@ int	key_hook(int keycode, t_data *data)
 	else if (keycode == 97)
 	{
 		leftmv(data);
-		data->cnt.mvt++;
+		data->cnt.mvt++;int enemy_dir;
+
 	}
 
 	else if (keycode == 100)
