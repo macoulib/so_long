@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 21:19:25 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 22:21:00 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,17 @@ void	init_images(t_data *data)
 			"./ressources/xpm/mario_player.xpm", &width, &height);
 	data->img.enemy = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/perso_texture.xpm", &width, &height);
+	data->img.player1 = mlx_xpm_file_to_image(data->mlx_ptr,
+			"./ressources/xpm/mario_player1.xpm.xpm", &width, &height);
+	data->player_img = data->img.player;
 }
 
 void	rendermap(t_data *data)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
+	char	*str;
+	char	*msg;
 
 	y = 0;
 	while (data->map[y])
@@ -44,10 +49,11 @@ void	rendermap(t_data *data)
 		}
 		y++;
 	}
-
-	char  *str = ft_itoa(data->cnt.mvt);
-	char  * msg = ft_strjoin("Mouvements : ", str); 
+	str = ft_itoa(data->cnt.mvt);
+	msg = ft_strjoin("Mouvements : ", str);
 	mlx_string_put(data->mlx_ptr, data->win_ptr, 10, 20, 0xFFFFFF, msg);
+	free(str);
+	free(msg);
 }
 
 void	displayimg(t_data *data, int y, int x)
@@ -68,11 +74,14 @@ void	displayimg(t_data *data, int y, int x)
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 			data->img.collectible, x * tile_size, y * tile_size);
 	else if (data->map[y][x] == 'P')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.player,
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->player_img,
 			x * tile_size, y * tile_size);
 	else if (data->map[y][x] == 'T')
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.enemy, x
 			* tile_size, y * tile_size);
+	else if (data->map[y][x] == 'C')
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+			data->img.collectible, x * tile_size, y * tile_size);
 }
 
 void	render_data(t_data *data)
@@ -83,6 +92,7 @@ void	render_data(t_data *data)
 	i = 0;
 	while (taille_tableau(data->map) > i)
 	{
+		data->player_img = data->img.player;
 		j = 0;
 		while (ft_strlen(data->map[0]) > j)
 		{

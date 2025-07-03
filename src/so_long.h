@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 19:25:26 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 22:05:54 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_img
 	void		*wall;
 	void		*exit;
 	void		*player;
+	void		*player1;
 	void		*floor;
 	void		*enemy;
 }				t_img;
@@ -70,7 +71,7 @@ typedef struct s_data
 	int			width;
 	int			height;
 	char		**map;
-	int enemy_dir;
+	void    *player_img;
 	t_img		img;
 	t_cnt		cnt;
 	t_positon	position;
