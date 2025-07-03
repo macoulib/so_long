@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/02 17:18:51 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:10:27 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	init_images(t_data *data)
 {
+	
 	int width, height;
 	data->img.wall = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/wall_texture.xpm", &width, &height);
@@ -27,6 +28,9 @@ void	init_images(t_data *data)
 			"./ressources/xpm/mario_player.xpm", &width, &height);
 	data->img.enemy = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/perso_texture.xpm", &width, &height);
+			
+	
+	
 }
 
 void	rendermap(t_data *data)
@@ -44,6 +48,12 @@ void	rendermap(t_data *data)
 		}
 		y++;
 	}
+
+	char  *str = ft_itoa(x); // convertit int -> string
+	char  * msg = ft_strjoin("Mouvements : ", str); // concatène
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 10, 20, 0xFFFFFF, msg);
+	//free(str);
+	//free(msg);
 }
 
 void	displayimg(t_data *data, int y, int x)
@@ -67,8 +77,8 @@ void	displayimg(t_data *data, int y, int x)
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.player,
 			x * tile_size, y * tile_size);
 	else if (data->map[y][x] == 'T')
-		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.enemy,
-			x * tile_size, y * tile_size);
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.enemy, x
+			* tile_size, y * tile_size);
 }
 
 void	render_data(t_data *data)

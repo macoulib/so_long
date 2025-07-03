@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/02 17:48:16 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:09:47 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ void			init_images(t_data *data);
 void			rendermap(t_data *data);
 void			init_images(t_data *data);
 void			displayimg(t_data *data, int y, int x);
+char	*ft_itoa(int n);
 
 #endif

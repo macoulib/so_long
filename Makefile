@@ -8,7 +8,7 @@ UTILS = initmap.c parsing.c so_long.c initdata.c rendermap.c movment.c updatemap
 
 # Fichiers sources librairie
 LIB_SRCS = ft_error.c ft_split.c ft_strchr.c ft_strdup.c ft_strlen.c \
-          ft_strrchr.c get_next_line.c ft_strjoin.c ft_strnstr.c tailletableau.c
+          ft_strrchr.c get_next_line.c ft_strjoin.c ft_strnstr.c tailletableau.c ft_itoa.c
 
 # Ajout des chemins aux fichiers sources
 SRCS = $(addprefix $(UTILS_DIR)/, $(UTILS)) \

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:38:41 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/02 17:50:01 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:06:25 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	fkclose(t_data *data)
 
 int	key_hook(int keycode, t_data *data)
 {
+	int i = 0;
 	if (keycode == 65307) // ESC
 		fkclose(data);
 	else if (keycode == 97)
