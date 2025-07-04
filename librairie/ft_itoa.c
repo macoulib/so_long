@@ -6,12 +6,11 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 23:29:17 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 14:59:53 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:08:17 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include  "../src/so_long.h"
+#include "../src/so_long.h"
 
 int	ft_countlen(int n)
 {

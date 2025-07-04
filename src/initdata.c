@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:32:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 16:30:58 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:47:27 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	count_collectibles(t_data *data)
 		y++;
 	}
 }
+
 void	init_enemy(t_data *data)
 {
 	int	x;
@@ -54,6 +55,7 @@ void	init_enemy(t_data *data)
 		y++;
 	}
 }
+
 void	ft_inicnt(t_data *data)
 {
 	int	x;

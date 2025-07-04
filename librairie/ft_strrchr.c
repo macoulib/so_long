@@ -6,12 +6,11 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 00:09:04 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/21 15:12:51 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:08:31 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include  "../src/so_long.h"
+#include "../src/so_long.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -26,10 +25,10 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-/* 
+/*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("%s", ft_strrchr("bonjour", 'j'));
 }*/

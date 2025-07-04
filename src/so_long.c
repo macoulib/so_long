@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 16:20:13 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:02:10 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	close_window(void *param)
 
 int	main(int ac, char *av[])
 {
-	t_data *data;
+	t_data	*data;
+
 	data = malloc(sizeof(t_data));
 	checkcommandeline(ac, av);
 	get_map(data, av[1]);

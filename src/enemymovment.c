@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 15:49:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 16:24:37 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:03:12 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	rightmvt(t_data *data)
 		rendermap(data);
 	}
 }
+
 void	leftmvt(t_data *data)
 {
 	int	x;

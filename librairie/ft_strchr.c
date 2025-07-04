@@ -6,13 +6,11 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 23:47:22 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/21 15:12:30 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:09:22 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include  "../src/so_long.h"
+#include "../src/so_long.h"
 
 char	*ft_strchr(const char *s, int c)
 {

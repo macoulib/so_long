@@ -6,12 +6,11 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 00:52:36 by macoulib          #+#    #+#             */
-/*   Updated: 2025/06/21 15:12:34 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:08:23 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include  "../src/so_long.h"
+#include "../src/so_long.h"
 
 char	*ft_strdup(const char *src)
 {

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 16:42:35 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:07:23 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@
 # include <string.h>
 # include <unistd.h>
 
-# ifndef BUFFEressources
-#  define BUFFER_SIZE 1024
-# endif
-
+# define BUFFER_SIZE 1024
 # define IMGHEIGHT 32
 # define IMGWIDTH 32
 # define ESC_KEY 53
@@ -112,6 +109,6 @@ int				enemykey_hook(int keycode, t_data *data);
 void			forleft(t_data *data, int x, int y);
 void			foright(t_data *data, int x, int y);
 void			fordown(t_data *data, int x, int y);
-void			fordown(t_data *data, int x, int y);
+void			forup(t_data *data, int x, int y);
 
 #endif

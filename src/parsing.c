@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 20:13:06 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 16:44:10 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:58:37 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	isrectancle(t_data *data)
 		i++;
 	}
 }
+
 void	check_content(t_data *data)
 {
 	int	i;
@@ -56,6 +57,7 @@ void	check_content(t_data *data)
 	if (o < 3)
 		ft_error("pas assez de sol.\n");
 }
+
 void	check_nbrcontent(t_data *data, int e, int c, int p)
 {
 	int	i;
@@ -81,6 +83,7 @@ void	check_nbrcontent(t_data *data, int e, int c, int p)
 	if (c == 0 || e == 0 || p > 1 || p == 0)
 		ft_error("error");
 }
+
 void	check_wall(t_data *data)
 {
 	int	i;
