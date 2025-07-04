@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 15:55:55 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:42:35 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct eposition_s
 {
 	int			x;
 	int			y;
-}	t_epositon;
+}				t_epositon;
 
 typedef struct s_img
 {
@@ -56,7 +56,6 @@ typedef struct s_img
 
 typedef struct cnt_s
 {
-	
 	int			coins;
 	int			exit;
 	int			player;
@@ -71,12 +70,12 @@ typedef struct s_data
 	int			width;
 	int			height;
 	char		**map;
-	void    *player_img;
+	void		*player_img;
 	t_img		img;
 	t_cnt		cnt;
 	t_positon	position;
 	t_epositon	eposition;
-	
+
 }				t_data;
 
 void			ft_error(const char *message);
@@ -108,8 +107,11 @@ void			init_images(t_data *data);
 void			rendermap(t_data *data);
 void			init_images(t_data *data);
 void			displayimg(t_data *data, int y, int x);
-char	*ft_itoa(int n);
-int	enemykey_hook(int keycode, t_data *data);
-
+char			*ft_itoa(int n);
+int				enemykey_hook(int keycode, t_data *data);
+void			forleft(t_data *data, int x, int y);
+void			foright(t_data *data, int x, int y);
+void			fordown(t_data *data, int x, int y);
+void			fordown(t_data *data, int x, int y);
 
 #endif

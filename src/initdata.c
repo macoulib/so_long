@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:32:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 15:49:19 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:30:58 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,11 @@ void	init_enemy(t_data *data)
 		}
 		y++;
 	}
-	//printf("enemey position %d %d \n", data->eposition.x , data->eposition.y) ;
 }
 void	ft_inicnt(t_data *data)
 {
 	int	x;
 	int	y;
-	int	enemy_dir;
 
 	x = 0;
 	y = 0;

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:03:42 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 22:44:03 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:38:35 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,7 @@ void	rightmv(t_data *data)
 	x = data->position.x;
 	y = data->position.y;
 	data->player_img = data->img.player;
-	if (data->map[y][x + 1] == 'T')
-	{
-		write(2, "perdu!", 7);
-		exit(0);
-	}
-	if (data->map[y][x + 1] == 'E' && data->cnt.tot_collect == 0)
-	{
-		write(2, "gagner!", 7);
-		exit(0);
-	}
-	if (data->map[y][x + 1] == 'E' && data->cnt.tot_collect > 0)
-	{
-		write(2, "You need to collect all collectibles to exit !", 47);
-		return ;
-	}
-	if (data->map[y][x + 1] == 'C')
-		data->cnt.tot_collect--;
+	foright(data, x, y);
 	if (data->map[y][x + 1] != '1' && data->map[y][x + 1] != '\0')
 	{
 		data->map[y][x] = '0';
@@ -53,23 +37,7 @@ void	leftmv(t_data *data)
 	x = data->position.x;
 	y = data->position.y;
 	data->player_img = data->img.player1;
-	if (data->map[y][x - 1] == 'T')
-	{
-		write(2, "perdu! ", 7);
-		exit(0);
-	}
-	if (data->map[y][x - 1] == 'E' && data->cnt.tot_collect == 0)
-	{
-		write(2, "gagner!", 7);
-		exit(0);
-	}
-	if (data->map[y][x - 1] == 'E' && data->cnt.tot_collect > 0)
-	{
-		write(2, "You need to collect all collectibles to exit !", 47);
-		return ;
-	}
-	if (data->map[y][x - 1] == 'C')
-		data->cnt.tot_collect--;
+	forleft(data, x, y);
 	if (x - 1 >= 0 && data->map[y][x - 1] != '1')
 	{
 		data->map[y][x] = '0';
@@ -87,23 +55,7 @@ void	upmv(t_data *data)
 	x = data->position.x;
 	y = data->position.y;
 	data->player_img = data->img.player;
-	if (data->map[y - 1][x] == 'T')
-	{
-		write(2, "perdu!", 7);
-		exit(0);
-	}
-	if (data->map[y - 1][x] == 'E' && data->cnt.tot_collect == 0)
-	{
-		write(2, "gagner!", 7);
-		exit(0);
-	}
-	if (data->map[y - 1][x] == 'E' && data->cnt.tot_collect > 0)
-	{
-		write(2, "You need to collect all collectibles to exit !", 47);
-		return ;
-	}
-	if (data->map[y - 1][x] == 'C')
-		data->cnt.tot_collect--;
+	forup(data, x, y);
 	if (y - 1 >= 0 && data->map[y - 1][x] != '1')
 	{
 		data->map[y][x] = '0';
@@ -121,23 +73,7 @@ void	downmv(t_data *data)
 	x = data->position.x;
 	y = data->position.y;
 	data->player_img = data->img.player1;
-	if (data->map[y + 1][x] == 'T')
-	{
-		write(2, "perdu!", 7);
-		exit(0);
-	}
-	if (data->map[y + 1][x] == 'E' && data->cnt.tot_collect == 0)
-	{
-		write(2, "gagner!", 7);
-		exit(0);
-	}
-	if (data->map[y + 1][x] == 'E' && data->cnt.tot_collect > 0)
-	{
-		write(2, "You need to collect all collectibles to exit !", 47);
-		return ;
-	}
-	if (data->map[y + 1][x] == 'C')
-		data->cnt.tot_collect--;
+	fordown(data, x, y);
 	if (data->map[y + 1] && data->map[y + 1][x] != '1')
 	{
 		data->map[y][x] = '0';

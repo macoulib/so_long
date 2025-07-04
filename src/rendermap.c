@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 22:25:16 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:44:44 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	rendermap(t_data *data)
 	char	*msg;
 
 	y = 0;
-
 	while (data->map[y])
 	{
 		x = -1;
