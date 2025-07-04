@@ -6,12 +6,11 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:32:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 22:15:15 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:49:19 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 void	count_collectibles(t_data *data)
 {
@@ -27,25 +26,47 @@ void	count_collectibles(t_data *data)
 		{
 			if (data->map[y][x] == 'C')
 			{
-					data->cnt.tot_collect++;
+				data->cnt.tot_collect++;
 			}
 		}
 		y++;
 	}
 }
-
-void	ft_inicnt(t_data *data)
+void	init_enemy(t_data *data)
 {
 	int	x;
 	int	y;
 
 	x = 0;
 	y = 0;
+	while (data->map[y])
+	{
+		x = 0;
+		while (data->map[y][x])
+		{
+			if (data->map[y][x] == 'T')
+			{
+				data->eposition.x = x;
+				data->eposition.y = y;
+			}
+			x++;
+		}
+		y++;
+	}
+	//printf("enemey position %d %d \n", data->eposition.x , data->eposition.y) ;
+}
+void	ft_inicnt(t_data *data)
+{
+	int	x;
+	int	y;
+	int	enemy_dir;
+
+	x = 0;
+	y = 0;
 	free((data->cnt.coins = 0, data->cnt.exit = 0, data->cnt.player = 0,
 			data->position.x = 0, data->position.y = 0, NULL));
 	data->cnt.mvt = 0;
-	data->cnt.tot_collect = 0;int enemy_dir;
-
+	data->cnt.tot_collect = 0;
 	count_collectibles(data);
 	while (data->map[y])
 	{
@@ -61,4 +82,5 @@ void	ft_inicnt(t_data *data)
 		}
 		y++;
 	}
+	init_enemy(data);
 }

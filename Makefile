@@ -4,7 +4,7 @@ SRCS_DIR = ./librairie
 UTILS_DIR = ./src
 
 # Fichiers sources utils
-UTILS = initmap.c parsing.c so_long.c initdata.c rendermap.c movment.c  key_hook.c
+UTILS = initmap.c parsing.c so_long.c initdata.c rendermap.c movment.c  key_hook.c enemymovment.c
 
 # Fichiers sources librairie
 LIB_SRCS = ft_error.c ft_split.c ft_strchr.c ft_strdup.c ft_strlen.c \

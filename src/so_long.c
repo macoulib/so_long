@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 19:25:40 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 16:20:13 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int ac, char *av[])
 	init_images(data);
 	render_data(data);
 	mlx_hook(data->win_ptr, 17, 0, close_window, NULL);
-	mlx_key_hook(data->win_ptr, key_hook, data);
+	mlx_key_hook(data->win_ptr, enemykey_hook, data);
 	mlx_loop(data->mlx_ptr);
 	return (0);
 }

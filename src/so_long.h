@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/03 22:05:54 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:55:55 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,16 @@ void			rightmv(t_data *data);
 void			leftmv(t_data *data);
 void			upmv(t_data *data);
 void			downmv(t_data *data);
+void			rightmvt(t_data *data);
+void			leftmvt(t_data *data);
+void			upmvt(t_data *data);
+void			downmvt(t_data *data);
 void			init_images(t_data *data);
 void			rendermap(t_data *data);
 void			init_images(t_data *data);
 void			displayimg(t_data *data, int y, int x);
 char	*ft_itoa(int n);
+int	enemykey_hook(int keycode, t_data *data);
+
 
 #endif
