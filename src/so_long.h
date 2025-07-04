@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 17:07:23 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:14:49 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,6 @@ void			forleft(t_data *data, int x, int y);
 void			foright(t_data *data, int x, int y);
 void			fordown(t_data *data, int x, int y);
 void			forup(t_data *data, int x, int y);
-
+void			freemap(t_data *data);
+void			destroy_images(t_data *data);
 #endif

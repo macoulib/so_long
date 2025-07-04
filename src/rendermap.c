@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 17:00:53 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:45:24 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	rendermap(t_data *data)
 	}
 	str = ft_itoa(data->cnt.mvt);
 	msg = ft_strjoin("Mouvements : ", str);
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 10, 20, 0xFFFFFF, msg);
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 40, 20, 0xFFFFFF, msg);
 	free(str);
 	free(msg);
 }

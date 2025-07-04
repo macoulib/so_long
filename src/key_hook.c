@@ -6,17 +6,33 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:38:41 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 16:51:38 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 20:24:28 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	fkclose(t_data *data)
+int fkclose(t_data *data)
 {
-	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-	return (0);
+    if (data)
+    {
+        destroy_images(data);
+
+        if (data->mlx_ptr && data->win_ptr)
+            mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+
+        if (data->mlx_ptr)
+        {
+            mlx_destroy_display(data->mlx_ptr);
+            free(data->mlx_ptr); 
+        }
+
+        freemap(data);
+    }
+
+    exit(0);
 }
+
 
 int	key_hook(int keycode, t_data *data)
 {
