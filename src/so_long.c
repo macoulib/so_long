@@ -6,13 +6,11 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 20:37:12 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/04 22:11:18 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-
 
 int	initwindow(t_data *data)
 {
@@ -33,6 +31,8 @@ int	main(int ac, char *av[])
 	if (ac == 2)
 	{
 		data = malloc(sizeof(t_data));
+		if (!data)
+			NULL;
 		checkcommandeline(ac, av);
 		get_map(data, av[1]);
 		map_valid(data);
