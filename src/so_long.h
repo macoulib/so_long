@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 21:17:33 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/08 23:30:52 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ typedef struct s_data
 
 }				t_data;
 
-void			ft_error(const char *message);
+void			ft_error(const char *message, t_data *data);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
-void			checkcommandeline(int ac, char *av[]);
+void			checkcommandeline(int ac, char *av[], t_data *data);
 size_t			ft_strlen(const char *theString);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strdup(const char *src);

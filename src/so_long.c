@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 22:11:18 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/08 23:31:09 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int	main(int ac, char *av[])
 		data = malloc(sizeof(t_data));
 		if (!data)
 			NULL;
-		checkcommandeline(ac, av);
+		checkcommandeline(ac, av, data);
 		get_map(data, av[1]);
 		map_valid(data);
 		ft_inicnt(data);
 		data->mlx_ptr = mlx_init();
 		if (!data->mlx_ptr)
-			ft_error("mlx_init failed");
+			ft_error("mlx_init failed",data);
 		initwindow(data);
 		init_images(data);
 		render_data(data);
