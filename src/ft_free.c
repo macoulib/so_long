@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 18:00:34 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/08 23:05:04 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:35:19 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,4 @@ void	destroy_images(t_data *data)
 	mlx_destroy_image(data->mlx_ptr, data->img.enemy);
 	mlx_destroy_image(data->mlx_ptr, data->img.player);
 	mlx_destroy_image(data->mlx_ptr, data->img.player1);
-	// if (data->player_img)
-	// 	mlx_destroy_image(data->mlx_ptr, data->img.player1);
-	// if (data->player_img)
-	// 	mlx_destroy_image(data->mlx_ptr, data->img.player);
 }

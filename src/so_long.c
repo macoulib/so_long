@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/08 23:31:09 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:33:31 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int ac, char *av[])
 		ft_inicnt(data);
 		data->mlx_ptr = mlx_init();
 		if (!data->mlx_ptr)
-			ft_error("mlx_init failed",data);
+			ft_error("mlx_init failed", data);
 		initwindow(data);
 		init_images(data);
 		render_data(data);

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 16:33:56 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 20:59:15 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:34:57 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	foright(t_data *data, int x, int y)
 	if (data->map[y][x + 1] == 'E' && data->cnt.tot_collect > 0)
 	{
 		write(2, "You need to collect all collectibles to exit !", 47);
-		//fkclose(data);
 		return (0);
 	}
 	if (data->map[y][x + 1] == 'C')
@@ -50,7 +49,7 @@ int	forleft(t_data *data, int x, int y)
 	if (data->map[y][x - 1] == 'E' && data->cnt.tot_collect > 0)
 	{
 		write(2, "You need to collect all collectibles to exit !", 47);
-		return (0) ;
+		return (0);
 	}
 	if (data->map[y][x - 1] == 'C')
 		data->cnt.tot_collect--;
@@ -78,6 +77,7 @@ int	forup(t_data *data, int x, int y)
 	}
 	return (1);
 }
+
 int	fordown(t_data *data, int x, int y)
 {
 	if (data->map[y + 1][x] == 'T')
