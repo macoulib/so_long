@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:38:41 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/04 22:17:53 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:27:12 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,22 @@ int	key_hook(int keycode, t_data *data)
 	else if (keycode == 97)
 	{
 		leftmv(data);
-		data->cnt.mvt++;
+		ft_printf("Mouvments : %d \n", data->cnt.mvt++);
 	}
 	else if (keycode == 100)
 	{
 		rightmv(data);
-		data->cnt.mvt++;
+		ft_printf("Mouvments : %d \n", data->cnt.mvt++);
 	}
 	else if (keycode == 119)
 	{
 		upmv(data);
-		data->cnt.mvt++;
+		ft_printf("Mouvments : %d \n", data->cnt.mvt++);
 	}
 	else if (keycode == 115)
 	{
 		downmv(data);
-		data->cnt.mvt++;
+		ft_printf("Mouvments : %d \n", data->cnt.mvt++);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/08 23:30:34 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/09 15:35:33 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	checkcommandeline(int ac, char *av[], t_data *data)
 		ft_error("erreur manque d' argument", data);
 	avleng = ft_strlen(av[1]);
 	if (avleng < 4)
-		ft_error("erreur d'extension",data);
+		ft_error("erreur d'extension", data);
 	if (!ft_strnstr(&av[1][avleng - 4], ".ber", 4))
 		ft_error("erreur d'extension", data);
 }
@@ -30,9 +30,15 @@ void	checkcommandeline(int ac, char *av[], t_data *data)
 char	*freestats(char *staticbuffer, char *buffer, t_data *data)
 {
 	char	*temp;
-	if(ft_strlen(buffer) <= 1)
-		ft_error("erreur dans la map", data);
-		
+
+	if (ft_strlen(buffer) <= 1)
+	{
+		free(data);
+		free(staticbuffer);
+		free(buffer);
+		write(2, "erreur dans la map \n", 20);
+		exit(0);
+	}
 	temp = ft_strjoin(staticbuffer, buffer);
 	free(staticbuffer);
 	return (temp);

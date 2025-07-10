@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/08 23:30:52 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 13:14:15 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ typedef struct s_data
 
 }				t_data;
 
-void			ft_error(const char *message, t_data *data);
+void			ft_error(char *message, t_data *data);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 void			checkcommandeline(int ac, char *av[], t_data *data);
 size_t			ft_strlen(const char *theString);
@@ -112,4 +112,13 @@ int				fordown(t_data *data, int x, int y);
 int				forup(t_data *data, int x, int y);
 void			freemap(t_data *data);
 void			destroy_images(t_data *data);
+int				ft_printf(const char *x, ...);
+int				ft_putchar(char c);
+int				ft_putnbr(int n);
+int				ft_putstr(char *s);
+int				ft_puthexamaj(const unsigned int n);
+int				ft_puthexamin(const unsigned int n);
+int				ft_putunbr(const unsigned int n);
+int				ft_putpointer(void *pointer);
+size_t			ft_strlen(const char *theString);
 #endif
