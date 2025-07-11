@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/09 15:35:33 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 18:14:49 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void	checkcommandeline(int ac, char *av[], t_data *data)
 	if (avleng < 4)
 		ft_error("erreur d'extension", data);
 	if (!ft_strnstr(&av[1][avleng - 4], ".ber", 4))
-		ft_error("erreur d'extension", data);
+	{
+		ft_printf("erreur d'extension") ;
+		exit(0);
+	}
 }
 
 char	*freestats(char *staticbuffer, char *buffer, t_data *data)
