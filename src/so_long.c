@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/10 18:02:34 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 20:17:17 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int ac, char *av[])
 			NULL;
 		checkcommandeline(ac, av, data);
 		get_map(data, av[1]);
+		data->height = 0;
 		map_valid(data);
 		ft_inicnt(data);
 		data->mlx_ptr = mlx_init();
@@ -46,6 +47,8 @@ int	main(int ac, char *av[])
 		mlx_hook(data->win_ptr, 17, 0, fkclose, data);
 		mlx_key_hook(data->win_ptr, enemykey_hook, data);
 		mlx_loop(data->mlx_ptr);
-		return (0);
 	}
+	else
+		ft_printf("nbr darg incorrect \n");
+	return (0);
 }

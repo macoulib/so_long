@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/10 18:14:49 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 20:17:43 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	checkcommandeline(int ac, char *av[], t_data *data)
 		ft_error("erreur d'extension", data);
 	if (!ft_strnstr(&av[1][avleng - 4], ".ber", 4))
 	{
-		ft_printf("erreur d'extension") ;
+		ft_printf("erreur d'extension");
 		exit(0);
 	}
 }
@@ -57,9 +57,11 @@ void	get_map(t_data *data, char *av)
 	if (fd == -1)
 		ft_error("erreur d'ouverture du fd ", data);
 	linestock = ft_strdup("");
-	data->height = 0;
-	while ((line = get_next_line(fd)) != NULL)
+	while (1)
 	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
 		linestock = freestats(linestock, line, data);
 		if (!linestock)
 		{
