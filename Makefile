@@ -6,7 +6,7 @@
 #    By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 19:35:26 by macoulib          #+#    #+#              #
-#    Updated: 2025/07/10 13:24:19 by macoulib         ###   ########.fr        #
+#    Updated: 2025/07/18 21:14:05 by macoulib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ PRINT = ft_printf.c ft_putchar.c ft_puthexamaj.c ft_puthexamin.c ft_putnbr.c ft_
 
 # Fichiers sources librairie
 LIB_SRCS = ft_error.c ft_split.c ft_strchr.c ft_strdup.c ft_strlen.c \
-          ft_strrchr.c get_next_line.c ft_strjoin.c ft_strnstr.c tailletableau.c ft_itoa.c
+          ft_strrchr.c get_next_line.c ft_strjoin.c ft_strnstr.c tailletableau.c ft_itoa.c ft_strcmp.c
 
 # Ajout des chemins aux fichiers sources
 SRCS = $(addprefix $(UTILS_DIR)/, $(UTILS)) \
@@ -36,12 +36,12 @@ SRCS = $(addprefix $(UTILS_DIR)/, $(UTILS)) \
 # Fichiers objets
 OBJS = $(SRCS:.c=.o)
 
-STANDARD_FLAGS = -g3
+STANDARD_FLAGS = -g3  -Wall -Wextra -Werror
 LDFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) ./src/so_long.h
 	$(CC) $(STANDARD_FLAGS) $(OBJS) -o $(NAME) $(LDFLAGS) 
 
 clean:

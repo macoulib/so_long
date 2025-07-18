@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 20:17:43 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 21:36:53 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@ void	checkcommandeline(int ac, char *av[], t_data *data)
 	if (ac < 2)
 		ft_error("erreur manque d' argument", data);
 	avleng = ft_strlen(av[1]);
-	if (avleng < 4)
-		ft_error("erreur d'extension", data);
+	if (avleng < 4){
+		ft_printf("erreur d'extension ");
+		free(data);
+		exit(0);
+	}
+		
 	if (!ft_strnstr(&av[1][avleng - 4], ".ber", 4))
 	{
-		ft_printf("erreur d'extension");
+		ft_printf("erreur d'extension fefefefefe");
+		free(data);
 		exit(0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/10 13:14:15 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 21:47:50 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,7 @@ int				ft_puthexamin(const unsigned int n);
 int				ft_putunbr(const unsigned int n);
 int				ft_putpointer(void *pointer);
 size_t			ft_strlen(const char *theString);
+int				ft_strcmp(char *char1, char *char2);
+int				init_enemy(t_data *data);
+
 #endif

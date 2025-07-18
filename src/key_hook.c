@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:38:41 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/10 13:28:05 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 21:50:15 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,16 @@ int	key_hook(int keycode, t_data *data)
 int	enemykey_hook(int keycode, t_data *data)
 {
 	key_hook(keycode, data);
-	if (keycode == 65362)
-		upmvt(data);
-	else if (keycode == 65361)
-		leftmvt(data);
-	else if (keycode == 65363)
-		rightmvt(data);
-	else if (keycode == 65364)
-		downmvt(data);
+	if (init_enemy(data))
+	{
+		if (keycode == 65362)
+			upmvt(data);
+		else if (keycode == 65361)
+			leftmvt(data);
+		else if (keycode == 65363)
+			rightmvt(data);
+		else if (keycode == 65364)
+			downmvt(data);
+	}
 	return (0);
 }

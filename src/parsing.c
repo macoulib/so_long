@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 20:13:06 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/11 16:10:04 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 21:45:01 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ void	check_content(t_data *data)
 	int	i;
 	int	j;
 	int	o;
+	int	k;
 
 	i = 0;
 	j = 0;
 	o = 0;
+	k = 0;
 	while (data->map[i])
 	{
 		j = 0;
@@ -53,12 +55,14 @@ void	check_content(t_data *data)
 				ft_error("Lettre parasite retrouver.\n", data);
 			if (data->map[i][j] == '0')
 				o++;
+			else if (data->map[i][j] == 'T')
+				k++;
 			j++;
 		}
 		i++;
 	}
-	if (o < 3)
-		ft_error("pas assez de sol.\n", data);
+	if (o < 3 || k > 1)
+		ft_error("pas assez de sol. ou enemi \n", data);
 }
 
 void	check_nbrcontent(t_data *data, int e, int c, int p)
