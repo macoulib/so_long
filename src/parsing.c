@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 20:13:06 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 21:45:01 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:46:18 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	isrectancle(t_data *data)
 	i = 0;
 	j = 0;
 	if (!data->map[i])
-		ft_error("erreur pas de map", data);
+		ft_error("❌ erreur pas de map", data);
 	mapsize = ft_strlen(data->map[i]);
 	while (data->map[i])
 	{
@@ -29,7 +29,7 @@ void	isrectancle(t_data *data)
 		while (data->map[i][j])
 			j++;
 		if (j != mapsize)
-			ft_error("La map n'est pas cohérente,ce n'est pas un rectangle.\n",
+			ft_error("❌La carte n’est pas cohérente : elle ne forme pas un rectangle..\n",
 				data);
 		i++;
 	}
@@ -48,21 +48,21 @@ void	check_content(t_data *data)
 	k = 0;
 	while (data->map[i])
 	{
-		j = 0;
-		while (data->map[i][j])
+		j = -1;
+		while (data->map[i][++j])
 		{
 			if (!ft_strchr("PE0C1T", data->map[i][j]))
-				ft_error("Lettre parasite retrouver.\n", data);
+				ft_error("❌ Lettre parasite.\n", data);
 			if (data->map[i][j] == '0')
 				o++;
 			else if (data->map[i][j] == 'T')
 				k++;
-			j++;
 		}
 		i++;
 	}
 	if (o < 3 || k > 1)
-		ft_error("pas assez de sol. ou enemi \n", data);
+		ft_error("❌Il n’y a pas assez de sol, ou il y a trop d’ennemis.\n",
+			data);
 }
 
 void	check_nbrcontent(t_data *data, int e, int c, int p)
@@ -88,7 +88,7 @@ void	check_nbrcontent(t_data *data, int e, int c, int p)
 		i++;
 	}
 	if (c == 0 || e == 0 || p > 1 || p == 0)
-		ft_error("error", data);
+		ft_error("❌Personnage, porte ou coin manquant.", data);
 }
 
 void	check_wall(t_data *data)
@@ -107,11 +107,11 @@ void	check_wall(t_data *data)
 		while (data->map[i][j])
 		{
 			if (data->map[0][j] != '1' || data->map[datalen - 1][j] != '1')
-				ft_error("erreur de mur principal", data);
+				ft_error("❌ Il y a une erreur sur le mur principal.", data);
 			j++;
 		}
 		if (data->map[i][0] != '1' || data->map[i][linelen - 1] != '1')
-			ft_error("erreur de mur ouverte", data);
+			ft_error("❌ le mur est ouvert.", data);
 		i++;
 	}
 }
@@ -127,6 +127,7 @@ void	map_valid(t_data *data)
 	p = 0;
 	isrectancle(data);
 	check_content(data);
-	check_nbrcontent(data, e, c, p);
 	check_wall(data);
+	check_nbrcontent(data, e, c, p);
+	exitacces(data);
 }

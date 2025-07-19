@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:40:13 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 21:30:40 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:32:16 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int	main(int ac, char *av[])
 		mlx_loop(data->mlx_ptr);
 	}
 	else
-		ft_printf("nbr darg incorrect \n");
+		ft_printf("❌ Nombre d’arguments incorrect.\n");
 	return (0);
 }

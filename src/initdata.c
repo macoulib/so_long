@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:32:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 21:47:03 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:47:13 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ void	count_collectibles(t_data *data)
 			if (data->map[y][x] == 'C')
 			{
 				data->cnt.tot_collect++;
+				if (data->map[y][x + 1] == '1' && data->map[y][x - 1] == '1'
+					&& data->map[y + 1][x] == '1' && data->map[y - 1][x] == '1')
+				{
+					ft_error("❌ Pas d’accès à l’objet : il est entouré de murs..",
+						data);
+				}
 			}
 		}
 		y++;
@@ -87,4 +93,34 @@ void	ft_inicnt(t_data *data)
 		y++;
 	}
 	init_enemy(data);
+}
+
+void	exitacces(t_data *data)
+{
+	int	x;
+	int	y;
+	int	height;
+	int	width;
+	int	mur;
+
+	height = 0;
+	while (data->map[height])
+		height++;
+	width = ft_strlen(data->map[0]);
+	x = 0;
+	while (++x < width - 1)
+	{
+		mur = 1;
+		y = -1;
+		while (++y < height)
+		{
+			if (data->map[y][x] != '1')
+			{
+				mur = 0;
+				break ;
+			}
+		}
+		if (mur)
+			ft_error("❌ Mur vertical détecté hors bordure.", data);
+	}
 }
