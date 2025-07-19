@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/19 17:30:27 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/19 19:06:23 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	displayimg(t_data *data, int y, int x)
 	else if (data->map[y][x] == 'C')
 		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 			data->img.collectible, x * tile_size, y * tile_size);
-	checkxpm(data);
 }
 
 void	render_data(t_data *data)
@@ -117,14 +116,8 @@ void	checkxpm(t_data *data)
 		i = 0;
 	if (!i)
 	{
-		free(data->img.wall);
-		free(data->img.floor);
-		free(data->img.player);
-		free(data->img.exit);
-		free(data->img.collectible);
-		free(data->img.enemy);
-		free(data->img.player1);
 		free(data);
+		ft_printf("erreur dans le XPM");
 		exit(0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/19 16:28:45 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/19 19:07:24 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,18 @@ void	checkcommandeline(int ac, char *av[], t_data *data)
 {
 	int	avleng;
 
+	checkxpm(data);
 	if (ac > 2)
 		ft_error("❌ Erreur : nombre d’arguments incorrect.", data);
 	if (ac < 2)
 		ft_error("❌ Erreur : nombre d’arguments incorrect.", data);
 	avleng = ft_strlen(av[1]);
-	if (avleng < 4){
+	if (avleng < 4)
+	{
 		ft_printf("❌ Erreur : l’extension du fichier n’est pas prise en chargen ");
 		free(data);
 		exit(0);
 	}
-		
 	if (!ft_strnstr(&av[1][avleng - 4], ".ber", 4))
 	{
 		ft_printf("❌ Erreur : l’extension du fichier n’est pas prise en charge faut .ber");
