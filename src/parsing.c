@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 20:13:06 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/19 19:01:49 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/21 00:51:30 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	isrectancle(t_data *data)
 		while (data->map[i][j])
 			j++;
 		if (j != mapsize)
-			ft_error("❌La carte n’est pas cohérente : elle ne forme pas un rectangle..\n",
+			ft_error("❌La carte n’est pas cohérente :  pas un rectangle..\n",
 				data);
 		i++;
 	}
@@ -46,7 +46,7 @@ void	check_content(t_data *data)
 	j = 0;
 	o = 0;
 	k = 0;
-	while (data->map[i])
+	while (data->map[++i])
 	{
 		j = -1;
 		while (data->map[i][++j])
@@ -58,7 +58,6 @@ void	check_content(t_data *data)
 			else if (data->map[i][j] == 'T')
 				k++;
 		}
-		i++;
 	}
 	if (o < 3 || k > 1)
 		ft_error("❌Il n’y a pas assez de sol, ou il y a trop d’ennemis.\n",
@@ -121,13 +120,15 @@ void	map_valid(t_data *data)
 	int	e;
 	int	c;
 	int	p;
+	int	height;
 
 	e = 0;
 	c = 0;
 	p = 0;
+	height = 0;
 	isrectancle(data);
 	check_content(data);
 	check_wall(data);
 	check_nbrcontent(data, e, c, p);
-	exitacces(data);
+	exitacces(data, height);
 }

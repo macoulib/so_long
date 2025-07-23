@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tailletableau.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 18:46:49 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 00:51:02 by macoulib         ###   ########.fr       */
+/*   Created: 2025/05/02 03:05:42 by macoulib          #+#    #+#             */
+/*   Updated: 2025/07/19 19:09:44 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/so_long.h"
 
-int	taille_tableau(char **tab)
+int	ft_putnbr(int n)
 {
-	int	i;
+	int	x;
 
-	i = 0;
-	while (tab[i] != NULL)
+	x = 1;
+	if (n == -2147483648)
 	{
-		i++;
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	return (i);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+		x++;
+	}
+	if (n >= 10)
+	{
+		x += ft_putnbr(n / 10);
+	}
+	ft_putchar(n % 10 + '0');
+	return (x);
 }

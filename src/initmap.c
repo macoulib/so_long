@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/19 19:07:24 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/21 01:03:28 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,26 @@ void	checkcommandeline(int ac, char *av[], t_data *data)
 {
 	int	avleng;
 
-	checkxpm(data);
 	if (ac > 2)
-		ft_error("❌ Erreur : nombre d’arguments incorrect.", data);
+		ft_error("❌ Erreur : trop d’arguments .", data);
 	if (ac < 2)
-		ft_error("❌ Erreur : nombre d’arguments incorrect.", data);
+		ft_error("❌ Erreur : minimuim deux arguments.", data);
 	avleng = ft_strlen(av[1]);
 	if (avleng < 4)
 	{
-		ft_printf("❌ Erreur : l’extension du fichier n’est pas prise en chargen ");
+		ft_printf("❌ l’extension du fichier n’est pas prise en charge ");
 		free(data);
 		exit(0);
 	}
 	if (!ft_strnstr(&av[1][avleng - 4], ".ber", 4))
 	{
-		ft_printf("❌ Erreur : l’extension du fichier n’est pas prise en charge faut .ber");
+		ft_printf("❌ pas prise en charge faut que des .ber");
 		free(data);
 		exit(0);
 	}
 }
 
-char	*freestats(char *staticbuffer, char *buffer, t_data *data)
+char	*freestats(char *staticbuffer, char *buffer, t_data *data, int fd)
 {
 	char	*temp;
 
@@ -45,7 +44,10 @@ char	*freestats(char *staticbuffer, char *buffer, t_data *data)
 		free(data);
 		free(staticbuffer);
 		free(buffer);
-		write(2, "erreur dans la map \n", 20);
+		temp = get_next_line(-1);
+		if (fd > 2)
+			close(fd);
+		write(2, "❌erreur dans la map\n", 21);
 		exit(0);
 	}
 	temp = ft_strjoin(staticbuffer, buffer);
@@ -61,14 +63,14 @@ void	get_map(t_data *data, char *av)
 
 	fd = open(av, O_RDONLY);
 	if (fd == -1)
-		ft_error("❌ erreur d'ouverture du fd ", data);
+		echecouverturedufichier(data);
 	linestock = ft_strdup("");
 	while (1)
 	{
 		line = get_next_line(fd);
 		if (!line)
 			break ;
-		linestock = freestats(linestock, line, data);
+		linestock = freestats(linestock, line, data, fd);
 		if (!linestock)
 		{
 			free(line);

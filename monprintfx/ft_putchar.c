@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tailletableau.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 18:46:49 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 00:51:02 by macoulib         ###   ########.fr       */
+/*   Created: 2025/05/02 02:58:40 by macoulib          #+#    #+#             */
+/*   Updated: 2025/07/10 13:36:43 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/so_long.h"
 
-int	taille_tableau(char **tab)
+int	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i] != NULL)
-	{
-		i++;
-	}
-	return (i);
+	write(1, &c, 1);
+	return (1);
 }

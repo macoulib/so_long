@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/19 19:06:23 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:39:04 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	init_images(t_data *data)
 			"./ressources/xpm/perso_texture.xpm", &width, &height);
 	data->img.player1 = mlx_xpm_file_to_image(data->mlx_ptr,
 			"./ressources/xpm/mario_player1.xpm", &width, &height);
+	checkxpm(data);
 }
 
 void	rendermap(t_data *data)
@@ -116,8 +117,12 @@ void	checkxpm(t_data *data)
 		i = 0;
 	if (!i)
 	{
-		free(data);
-		ft_printf("erreur dans le XPM");
+		destroyeur(data);
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		mlx_destroy_display(data->mlx_ptr);
+		free(data->mlx_ptr);
+		freemap(data);
+		ft_printf("❌ erreur dans le XPM \n");
 		exit(0);
 	}
 }

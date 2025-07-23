@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tailletableau.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 18:46:49 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 00:51:02 by macoulib         ###   ########.fr       */
+/*   Created: 2025/04/24 20:16:42 by macoulib          #+#    #+#             */
+/*   Updated: 2025/07/10 13:36:59 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/so_long.h"
 
-int	taille_tableau(char **tab)
+size_t	ft_strlen(const char *theString)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (tab[i] != NULL)
-	{
+	while (theString[i])
 		i++;
-	}
 	return (i);
 }

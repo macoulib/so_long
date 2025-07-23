@@ -6,12 +6,33 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:32:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/19 16:47:13 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/21 01:09:50 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	surrounded(t_data *data, int x, int y)
+{
+	if (data->map[y][x] == 'C')
+	{
+		data->cnt.tot_collect++;
+		if (data->map[y][x + 1] == '1' && data->map[y][x - 1] == '1'
+			&& data->map[y + 1][x] == '1' && data->map[y - 1][x] == '1')
+		{
+			ft_error("❌ Pas d’accès à l’objet :..", data);
+		}
+	}
+	if (data->map[y][x] == 'E')
+	{
+		data->cnt.tot_collect++;
+		if (data->map[y][x + 1] == '1' && data->map[y][x - 1] == '1'
+			&& data->map[y + 1][x] == '1' && data->map[y - 1][x] == '1')
+		{
+			ft_error("❌ Pas d’accès à la porte :..", data);
+		}
+	}
+}
 void	count_collectibles(t_data *data)
 {
 	int	x;
@@ -24,16 +45,7 @@ void	count_collectibles(t_data *data)
 		x = -1;
 		while (data->map[y][++x])
 		{
-			if (data->map[y][x] == 'C')
-			{
-				data->cnt.tot_collect++;
-				if (data->map[y][x + 1] == '1' && data->map[y][x - 1] == '1'
-					&& data->map[y + 1][x] == '1' && data->map[y - 1][x] == '1')
-				{
-					ft_error("❌ Pas d’accès à l’objet : il est entouré de murs..",
-						data);
-				}
-			}
+			surrounded(data, x, y);
 		}
 		y++;
 	}
@@ -95,15 +107,13 @@ void	ft_inicnt(t_data *data)
 	init_enemy(data);
 }
 
-void	exitacces(t_data *data)
+void	exitacces(t_data *data, int height)
 {
 	int	x;
 	int	y;
-	int	height;
 	int	width;
 	int	mur;
 
-	height = 0;
 	while (data->map[height])
 		height++;
 	width = ft_strlen(data->map[0]);

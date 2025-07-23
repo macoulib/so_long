@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 16:33:56 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/10 13:34:57 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:40:45 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	foright(t_data *data, int x, int y)
 {
 	if (data->map[y][x + 1] == 'T')
 	{
-		write(2, "perdu!", 7);
+		write(2, "Perdu 😢 vous avez touché l'ennemi.!", 40);
 		fkclose(data);
 	}
 	if (data->map[y][x + 1] == 'E' && data->cnt.tot_collect == 0)
 	{
-		write(2, "gagner!", 7);
+		write(2, "Victoire 🏆 Félicitations, vous avez gagné ! 🎊! ", 57);
 		fkclose(data);
 	}
 	if (data->map[y][x + 1] == 'E' && data->cnt.tot_collect > 0)
@@ -38,12 +38,12 @@ int	forleft(t_data *data, int x, int y)
 {
 	if (data->map[y][x - 1] == 'T')
 	{
-		write(2, "perdu! ", 7);
+		write(2, "Victoire 🏆 Félicitations, vous avez gagné ! 🎊! ", 57);
 		fkclose(data);
 	}
 	if (data->map[y][x - 1] == 'E' && data->cnt.tot_collect == 0)
 	{
-		write(2, "gagner!", 7);
+		write(2, "Victoire 🏆 Félicitations, vous avez gagné ! 🎊! ", 57);
 		fkclose(data);
 	}
 	if (data->map[y][x - 1] == 'E' && data->cnt.tot_collect > 0)
@@ -60,7 +60,7 @@ int	forup(t_data *data, int x, int y)
 {
 	if (data->map[y - 1][x] == 'T')
 	{
-		write(2, "perdu!", 7);
+		write(2, "Perdu 😢 vous avez touché l'ennemi.!", 40);
 		fkclose(data);
 	}
 	if (data->map[y - 1][x] == 'E' && data->cnt.tot_collect > 0)
@@ -70,7 +70,7 @@ int	forup(t_data *data, int x, int y)
 	}
 	if (data->map[y - 1][x] == 'E' && data->cnt.tot_collect == 0)
 	{
-		write(2, "gagner!", 7);
+		write(2, "Victoire 🏆 Félicitations, vous avez gagné ! 🎊! ", 57);
 		fkclose(data);
 		if (data->map[y - 1][x] == 'C')
 			data->cnt.tot_collect--;
@@ -82,12 +82,12 @@ int	fordown(t_data *data, int x, int y)
 {
 	if (data->map[y + 1][x] == 'T')
 	{
-		write(2, "perdu!", 7);
+		write(2, "Perdu 😢 vous avez touché l'ennemi.!", 40);
 		fkclose(data);
 	}
 	if (data->map[y + 1][x] == 'E' && data->cnt.tot_collect == 0)
 	{
-		write(2, "gagner!", 7);
+		write(2, "Victoire 🏆 Félicitations, vous avez gagné ! 🎊! ", 57);
 		fkclose(data);
 	}
 	if (data->map[y + 1][x] == 'E' && data->cnt.tot_collect > 0)
