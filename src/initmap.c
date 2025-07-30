@@ -6,30 +6,26 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 18:56:58 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 01:03:28 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:26:30 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	checkcommandeline(int ac, char *av[], t_data *data)
+void	checkcommandeline(char *av[], t_data *data)
 {
 	int	avleng;
 
-	if (ac > 2)
-		ft_error("❌ Erreur : trop d’arguments .", data);
-	if (ac < 2)
-		ft_error("❌ Erreur : minimuim deux arguments.", data);
 	avleng = ft_strlen(av[1]);
 	if (avleng < 4)
 	{
-		ft_printf("❌ l’extension du fichier n’est pas prise en charge ");
+		ft_printf("Error\n❌ Invalid file extension.\n");
 		free(data);
 		exit(0);
 	}
 	if (!ft_strnstr(&av[1][avleng - 4], ".ber", 4))
 	{
-		ft_printf("❌ pas prise en charge faut que des .ber");
+		ft_printf("Error\n❌ You must input a .ber file.\n");
 		free(data);
 		exit(0);
 	}
@@ -47,7 +43,7 @@ char	*freestats(char *staticbuffer, char *buffer, t_data *data, int fd)
 		temp = get_next_line(-1);
 		if (fd > 2)
 			close(fd);
-		write(2, "❌erreur dans la map\n", 21);
+		write(2, "Error\n❌ Empty line detected in map.\n", 37);
 		exit(0);
 	}
 	temp = ft_strjoin(staticbuffer, buffer);

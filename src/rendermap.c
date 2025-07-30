@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 18:09:26 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/20 19:39:04 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:24:38 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ void	displayimg(t_data *data, int y, int x)
 
 void	render_data(t_data *data)
 {
-	int	i;
-	int	j;
+	int		i;
+	size_t	j;
 
 	i = 0;
 	data->player_img = data->img.player;
@@ -122,7 +122,7 @@ void	checkxpm(t_data *data)
 		mlx_destroy_display(data->mlx_ptr);
 		free(data->mlx_ptr);
 		freemap(data);
-		ft_printf("❌ erreur dans le XPM \n");
+		ft_printf("Error\n❌ XPM Error.\n");
 		exit(0);
 	}
 }

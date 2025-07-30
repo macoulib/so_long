@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 20:13:06 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/24 20:33:31 by macoulib         ###   ########.fr       */
+/*   Created: 2025/04/26 00:45:59 by macoulib          #+#    #+#             */
+/*   Updated: 2025/07/24 16:50:15 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../src/so_long.h"
 
-void	map_valid(t_data *data)
+void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
-	int	e;
-	int	c;
-	int	p;
+	void	*moncalloc;
+	size_t	nbr;
 
-	free((e = 0, c = 0, p = 0, NULL));
-	getplayerposition(data);
-	isrectancle(data);
-	check_content(data);
-	check_wall(data);
-	check_nbrcontent(data, e, c, p);
-	check_valid_path(data);
+	nbr = elementCount * elementSize;
+	moncalloc = malloc(nbr);
+	if (!moncalloc)
+		return (NULL);
+	ft_bzero(moncalloc, nbr);
+	return (moncalloc);
 }

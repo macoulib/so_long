@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 13:22:37 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/20 22:00:32 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:34:41 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ typedef struct s_data
 	int			width;
 	int			height;
 	char		**map;
+	int			collectiblefound;
+	int			exit_found;
 	void		*player_img;
 	t_img		img;
 	t_cnt		cnt;
@@ -77,7 +79,7 @@ typedef struct s_data
 
 void			ft_error(char *message, t_data *data);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
-void			checkcommandeline(int ac, char *av[], t_data *data);
+void			checkcommandeline(char *av[], t_data *data);
 size_t			ft_strlen(const char *theString);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strdup(const char *src);
@@ -122,8 +124,20 @@ int				ft_putunbr(const unsigned int n);
 int				ft_putpointer(void *pointer);
 size_t			ft_strlen(const char *theString);
 int				init_enemy(t_data *data);
-void			exitacces(t_data *data, int height);
 void			checkxpm(t_data *data);
 void			destroyeur(t_data *data);
 void			echecouverturedufichier(t_data *data);
+void			floodfill(char **map, int x, int y, t_data *data);
+char			**cpymap(char **map);
+void			freemapcpy(char **mapcpy);
+void			*ft_calloc(size_t elementCount, size_t elementSize);
+void			ft_bzero(void *s, size_t n);
+void			getplayerposition(t_data *data);
+void			count_collectibles(t_data *data);
+void			check_valid_path(t_data *data);
+void			isrectancle(t_data *data);
+void			check_content(t_data *data);
+void			check_nbrcontent(t_data *data, int e, int c, int p);
+void			check_wall(t_data *data);
+
 #endif

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 20:13:06 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/24 20:33:31 by macoulib         ###   ########.fr       */
+/*   Created: 2025/04/24 21:24:50 by macoulib          #+#    #+#             */
+/*   Updated: 2025/07/24 16:54:54 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../src/so_long.h"
 
-void	map_valid(t_data *data)
+void	ft_bzero(void *s, size_t n)
 {
-	int	e;
-	int	c;
-	int	p;
+	unsigned char	*scpy;
+	size_t			i;
 
-	free((e = 0, c = 0, p = 0, NULL));
-	getplayerposition(data);
-	isrectancle(data);
-	check_content(data);
-	check_wall(data);
-	check_nbrcontent(data, e, c, p);
-	check_valid_path(data);
+	i = 0 ;
+	scpy = (unsigned char *) s;
+	while (n > i)
+	{
+		scpy[i] = '\0';
+		i++;
+	}
 }

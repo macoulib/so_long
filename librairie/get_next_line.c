@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:58:53 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 00:37:33 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:36:23 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (free(staticbuffer),NULL);
+		return (free(staticbuffer), NULL);
 	staticbuffer = readfile(fd, staticbuffer);
 	if (!staticbuffer)
 		return (NULL);
